@@ -1,3 +1,4 @@
+/* Reset و تنظیمات پایه */
 * {
     margin: 0;
     padding: 0;
@@ -5,10 +6,67 @@
     font-family: 'Poppins', sans-serif;
 }
 
+/* تم تاریک (پیش‌فرض) */
 body {
     background: #0f172a;
     color: #f8fafc;
     line-height: 1.6;
+    transition: all 0.5s ease;
+}
+
+/* تم روشن */
+body.light-mode {
+    background: #f8fafc;
+    color: #0f172a;
+}
+
+.light-mode .section-title,
+.light-mode .btn-neon {
+    color: #3b82f6;
+}
+
+.light-mode .timeline-content,
+.light-mode .project-card,
+.light-mode .skill-bar,
+.light-mode #main-nav {
+    background: #e2e8f0;
+}
+
+/* دکمه تغییر تم */
+.theme-btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background: #3b82f6;
+    color: white;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    z-index: 1001;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* منوی ناوبری */
+#main-nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: rgba(15, 23, 42, 0.9);
+    padding: 15px 0;
+    z-index: 1000;
+    transition: all 0.3s;
+    text-align: center;
+}
+
+#main-nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: 500;
 }
 
 /* هدر */
@@ -19,6 +77,7 @@ header {
     justify-content: center;
     position: relative;
     overflow: hidden;
+    background-attachment: fixed;
 }
 
 #particles-js {
@@ -55,6 +114,7 @@ header {
     transition: all 0.3s;
     margin-top: 20px;
     display: inline-block;
+    text-decoration: none;
 }
 
 .btn-neon:hover {
@@ -68,6 +128,7 @@ header {
     padding: 80px 20px;
     max-width: 1200px;
     margin: 0 auto;
+    transition: transform 0.5s;
 }
 
 .section-title {
@@ -82,6 +143,8 @@ header {
     display: flex;
     align-items: center;
     gap: 30px;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .profile-img {
@@ -92,31 +155,11 @@ header {
     border: 5px solid #3b82f6;
 }
 
-/* مهارت‌ها */
-.skills-container {
+/* نمودار مهارت‌ها */
+.skills-chart {
     max-width: 600px;
     margin: 0 auto;
-}
-
-.skill {
-    margin-bottom: 20px;
-}
-
-.skill-name {
-    display: block;
-    margin-bottom: 5px;
-}
-
-.skill-bar {
-    background: #1e293b;
-    height: 10px;
-    border-radius: 5px;
-}
-
-.skill-level {
-    background: linear-gradient(90deg, #3b82f6, #a855f7);
-    height: 100%;
-    border-radius: 5px;
+    padding: 20px;
 }
 
 /* Timeline */
@@ -205,9 +248,34 @@ header {
     border: 1px solid #3b82f6;
     border-radius: 5px;
     color: white;
+    transition: all 0.3s;
 }
 
 .contact-form textarea {
     min-height: 150px;
     resize: vertical;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    box-shadow: 0 0 10px #3b82f6;
+}
+
+/* رسپانسیو */
+@media (max-width: 768px) {
+    .timeline::before {
+        left: 31px;
+    }
+
+    .timeline-item {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+    }
+
+    .about-content {
+        flex-direction: column;
+        text-align: center;
+    }
 }
