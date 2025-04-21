@@ -1,0 +1,69 @@
+/* پایه و ریست */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: #0f172a;
+    color: #f8fafc;
+    line-height: 1.6;
+}
+
+/* هدر با افکت ذرات */
+header {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.particles-js {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+.header-content h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+}
+
+/* دکمه نئون */
+.btn-neon {
+    background: transparent;
+    color: #3b82f6;
+    border: 2px solid #3b82f6;
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-neon:hover {
+    background: #3b82f6;
+    color: #0f172a;
+    box-shadow: 0 0 15px #3b82f6;
+}
+
+/* مهارت‌ها */
+.skill-bar {
+    background: #1e293b;
+    height: 10px;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+.skill-level {
+    background: linear-gradient(90deg, #3b82f6, #a855f7);
+    height: 100%;
+    border-radius: 5px;
+}
